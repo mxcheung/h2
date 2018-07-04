@@ -12,6 +12,7 @@ public class Video {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+  //  @Column(nullable = false)
     @Column(nullable = false, unique = true)
     private String videoId;
 
@@ -20,7 +21,10 @@ public class Video {
 
     @Column(nullable = false)
 	private String data;
-
+    
+    public Video() {
+        super();
+    }
 	public Video(String videoId, String title) {
 		this.videoId = videoId;
 		this.title = title;

@@ -70,4 +70,16 @@ public class ThirdPartyYoutubeClass implements ThirdPartyYoutubeLib {
         return video;
     }
 
+	@Override
+	public Video addVideo(Video video) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Video getLatestVideo(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

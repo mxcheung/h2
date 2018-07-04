@@ -8,4 +8,8 @@ public interface ThirdPartyYoutubeLib {
     public HashMap<String, Video> popularVideos();
 
     public Video getVideo(String videoId);
+
+	Video addVideo(Video video);
+
+	Video getLatestVideo(long id);
 }
