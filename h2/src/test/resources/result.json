@@ -1,0 +1,37 @@
+[
+  {
+    "account": "account2",
+    "transactionDate": "2018-01-02",
+    "amountByType": {
+      "EXCESS": {
+        "": 10
+      },
+      "GST": {
+        "": 10
+      },
+      "CASH": {
+        "AUD": 1,
+        "USD": 10
+      }
+    }
+  },
+  {
+    "account": "account2",
+    "transactionDate": "2018-01-01",
+    "amountByType": {
+      "CASH": {
+        "USD": 10
+      }
+    }
+  },
+  {
+    "account": "account1",
+    "transactionDate": "2018-01-01",
+    "amountByType": {
+      "CASH": {
+        "AUD": 1,
+        "USD": 10
+      }
+    }
+  }
+]

@@ -75,10 +75,13 @@ public class SalesServiceImpl implements SalesService {
 		String account2 = "account2";
 		LocalDate tranDate1 = LocalDate.of(2018, 1, 1);
 		LocalDate tranDate2 = LocalDate.of(2018, 1, 2);
-		sales.add(new Sales(account1, tranDate1, "AUD", BigDecimal.ONE));
-		sales.add(new Sales(account1, tranDate1, "USD", BigDecimal.TEN));
-		sales.add(new Sales(account2, tranDate1, "USD", BigDecimal.TEN));
-		sales.add(new Sales(account2, tranDate2, "USD", BigDecimal.TEN));
+		sales.add(new Sales(account1, tranDate1, "CASH", "AUD", BigDecimal.ONE));
+		sales.add(new Sales(account1, tranDate1, "CASH", "USD", BigDecimal.TEN));
+		sales.add(new Sales(account2, tranDate1, "CASH","USD", BigDecimal.TEN));
+		sales.add(new Sales(account2, tranDate2, "EXCESS", null , BigDecimal.TEN));
+		sales.add(new Sales(account2, tranDate2, "GST", null , BigDecimal.TEN));
+		sales.add(new Sales(account2, tranDate2, "CASH", "AUD", BigDecimal.ONE));
+		sales.add(new Sales(account2, tranDate2, "CASH", "USD", BigDecimal.TEN));
 		salesRepository.saveAll(sales);
 
 	}

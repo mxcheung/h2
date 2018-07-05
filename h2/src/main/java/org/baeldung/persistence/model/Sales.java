@@ -24,6 +24,9 @@ public class Sales {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate transactionDate;
     
+    @Column(name = "type")
+    private String type;
+    
     @Column(name = "currency", length = 3)
     private String currency;
     
@@ -34,10 +37,11 @@ public class Sales {
 		super();
 	}
 
-	public Sales(String account, LocalDate transactionDate, String currency, BigDecimal amount) {
+	public Sales(String account, LocalDate transactionDate, String type, String currency, BigDecimal amount) {
 		super();
 		this.account = account;
 		this.transactionDate = transactionDate;
+		this.type = type;
 		this.currency = currency;
 		this.amount = amount;
 	}
@@ -67,7 +71,7 @@ public class Sales {
 	}
 
 	public String getCurrency() {
-		return currency;
+		return (currency != null) ? currency : "";
 	}
 
 	public void setCurrency(String currency) {
@@ -80,6 +84,14 @@ public class Sales {
 
 	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
     
     
