@@ -31,3 +31,5 @@ https://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tu
 
 
 https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+
+http://www.baeldung.com/java-groupingby-collector
