@@ -35,3 +35,4 @@ https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
 http://www.baeldung.com/java-groupingby-collector
 
 
+https://www.mkyong.com/spring3/spring-objectxml-mapping-example/
