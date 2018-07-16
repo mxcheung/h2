@@ -1,26 +1,29 @@
 package org.baeldung.persistence.model;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
 public class Settlement {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
 	@Column(name = "cdp_settlement_id")
 	private String cdpSettlementId;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "settlement_system_id")
 	private Long settlementSystemId;
 
@@ -41,7 +44,7 @@ public class Settlement {
 	@Column(name = "linked_settlement_system_id")
 	private Long linkedSettlementSystemId;
 
-	@Column(name = "exchange_trade_reference")
+	@Column
 	private String exchangeTradeReference;
 
 	@Column(name = "settlement_type")
@@ -163,6 +166,14 @@ public class Settlement {
 
 	@Transient
 	private String allocationPartyId;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getCdpSettlementId() {
 		return cdpSettlementId;
@@ -523,7 +534,5 @@ public class Settlement {
 	public void setAllocationPartyId(String allocationPartyId) {
 		this.allocationPartyId = allocationPartyId;
 	}
-
-	
 	
 }

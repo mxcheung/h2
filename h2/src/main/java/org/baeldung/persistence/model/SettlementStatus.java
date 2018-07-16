@@ -1,6 +1,5 @@
 package org.baeldung.persistence.model;
 
 public enum  SettlementStatus {
-	FOP,
-	DVP
+	SETTLEMENT_REQUEST_SENT
 }
