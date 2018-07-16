@@ -30,6 +30,14 @@ public class Settlement {
 	@Column(name = "previous_valid_settlement_status_id")
 	private Integer previousValidSettlementStatusId;
 
+	@Transient
+	@Enumerated(EnumType.ORDINAL)
+	private SettlementStatus settlementStatus;
+
+	@Transient
+	@Enumerated(EnumType.ORDINAL)
+	private SettlementStatus previousValidSettlementStatus;
+
 	@Column(name = "linked_settlement_system_id")
 	private Long linkedSettlementSystemId;
 
@@ -39,22 +47,27 @@ public class Settlement {
 	@Column(name = "settlement_type")
 	@Enumerated(EnumType.STRING)
 	private SettlementType settlementType;
-	
+
 	@Column(name = "earmark_flag")
 	@Enumerated(EnumType.ORDINAL)
 	private EarmarkFlag earmarkFlag;
+//		@Column(name = "offMarket_reference")
 
-
-	// @Column(name = "offMarket_reference")
-
-	// java.sql.SQLException: Invalid column name 'off_market_reference'. private
-	// String offmarketReference;
+	//java.sql.SQLException: Invalid column name 'off_market_reference'. private String offmarketReference;
 
 	@Column(name = "transaction_type")
 	private String transactionType;
 
 	@Column(name = "place_of_settlement")
 	private String placeOfSettlement;
+
+	@Column(name = "safe_deliver_receive")
+	@Enumerated(EnumType.STRING)
+	private SafeDeliverReceive safeDeliverReceive;
+
+	@Column(name = "fopdvp")
+	@Enumerated(EnumType.STRING)
+	private FOPDVP fopDvp;
 
 	@Column(name = "isin")
 	private String isin;
@@ -163,9 +176,8 @@ public class Settlement {
 		return settlementSystemId;
 	}
 
-	public Settlement setSettlementSystemId(Long settlementSystemId) {
+	public void setSettlementSystemId(Long settlementSystemId) {
 		this.settlementSystemId = settlementSystemId;
-		return this;
 	}
 
 	public Integer getSettlementStatusId() {
@@ -184,6 +196,22 @@ public class Settlement {
 		this.previousValidSettlementStatusId = previousValidSettlementStatusId;
 	}
 
+	public SettlementStatus getSettlementStatus() {
+		return settlementStatus;
+	}
+
+	public void setSettlementStatus(SettlementStatus settlementStatus) {
+		this.settlementStatus = settlementStatus;
+	}
+
+	public SettlementStatus getPreviousValidSettlementStatus() {
+		return previousValidSettlementStatus;
+	}
+
+	public void setPreviousValidSettlementStatus(SettlementStatus previousValidSettlementStatus) {
+		this.previousValidSettlementStatus = previousValidSettlementStatus;
+	}
+
 	public Long getLinkedSettlementSystemId() {
 		return linkedSettlementSystemId;
 	}
@@ -200,6 +228,22 @@ public class Settlement {
 		this.exchangeTradeReference = exchangeTradeReference;
 	}
 
+	public SettlementType getSettlementType() {
+		return settlementType;
+	}
+
+	public void setSettlementType(SettlementType settlementType) {
+		this.settlementType = settlementType;
+	}
+
+	public EarmarkFlag getEarmarkFlag() {
+		return earmarkFlag;
+	}
+
+	public void setEarmarkFlag(EarmarkFlag earmarkFlag) {
+		this.earmarkFlag = earmarkFlag;
+	}
+
 	public String getTransactionType() {
 		return transactionType;
 	}
@@ -214,6 +258,22 @@ public class Settlement {
 
 	public void setPlaceOfSettlement(String placeOfSettlement) {
 		this.placeOfSettlement = placeOfSettlement;
+	}
+
+	public SafeDeliverReceive getSafeDeliverReceive() {
+		return safeDeliverReceive;
+	}
+
+	public void setSafeDeliverReceive(SafeDeliverReceive safeDeliverReceive) {
+		this.safeDeliverReceive = safeDeliverReceive;
+	}
+
+	public FOPDVP getFopDvp() {
+		return fopDvp;
+	}
+
+	public void setFopDvp(FOPDVP fopDvp) {
+		this.fopDvp = fopDvp;
 	}
 
 	public String getIsin() {
@@ -404,9 +464,8 @@ public class Settlement {
 		return settledAmount;
 	}
 
-	public Settlement  setSettledAmount(BigDecimal settledAmount) {
+	public void setSettledAmount(BigDecimal settledAmount) {
 		this.settledAmount = settledAmount;
-		return this;
 	}
 
 	public String getMicsProductKey() {
@@ -463,22 +522,6 @@ public class Settlement {
 
 	public void setAllocationPartyId(String allocationPartyId) {
 		this.allocationPartyId = allocationPartyId;
-	}
-
-	public SettlementType getSettlementType() {
-		return settlementType;
-	}
-
-	public void setSettlementType(SettlementType settlementType) {
-		this.settlementType = settlementType;
-	}
-
-	public EarmarkFlag getEarmarkFlag() {
-		return earmarkFlag;
-	}
-
-	public void setEarmarkFlag(EarmarkFlag earmarkFlag) {
-		this.earmarkFlag = earmarkFlag;
 	}
 
 	
