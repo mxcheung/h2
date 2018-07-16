@@ -1,0 +1,48 @@
+<Settlement>
+<cdpSettlementId />
+<settlementSystemId>84422</settlementSystemId>
+<settlementStatusId>2</settlementStatusId>
+<previousValidSettlementStatusId />
+<settlementStatus>SETTLEMENT_REQUEST_SENT</settlementStatus>
+<previousValidSettlementStatus />
+<linkedSettlementSystemId />
+<exchangeTradeReference>3hAO-a1593123</exchangeTradeReference>
+<settlementType>NORMAL</settlementType>
+<earmarkFlag />
+<offmarketReference />
+<transactionType>Trade</transactionType>
+<placeOfSettlement>CDPLSGSG</placeOfSettlement>
+<safeDeliverReceive>DELIVER</safeDeliverReceive>
+<fopDvp>FOP</fopDvp>
+<isin>SG1S03926213</isin>
+<quantity>10000</quantity>
+<amount>0</amount>
+<currency>SGD</currency>
+<accruedInterestAmount />
+<accruedInterestAmountCurrency />
+<tradeDate>2018-05-18</tradeDate>
+<settlementDate>2018-05-23</settlementDate>
+<dealPrice>1.22</dealPrice>
+<dealPriceCurrency>SGD</dealPriceCurrency>
+<accountOwnerId>FCSLSGSG</accountOwnerId>
+<accountOwnerIdType>BIC</accountOwnerIdType>
+<safekeepingAccount>215121009063</safekeepingAccount>
+<depository>CDPLSGSG</depository>
+<counterpartyId>213</counterpartyId>
+<counterpartyIdType>CDP</counterpartyIdType>
+<corporateActionReference />
+<previousCdpSettlementSystemId />
+<matchedCdpSettlementSystemId />
+<matchedAmount />
+<rejectedReason />
+<fullSettlement />
+<settledQuantity />
+<settledAmount />
+<micsProductKey />
+<micsSymbol />
+<createdBy>AUTO</createdBy>
+<verifiedBy />
+<lastUpdated>2018-05-21T15:00:00.263</lastUpdated>
+<confirmReason />
+<allocationPartyId />
+</Settlement>
