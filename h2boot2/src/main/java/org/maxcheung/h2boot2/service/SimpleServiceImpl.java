@@ -3,6 +3,7 @@ package org.maxcheung.h2boot2.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,11 @@ public class SimpleServiceImpl implements SimpleService {
 		environmentTable = initialise();
 	}
 
+	
 	@Override
 	public String getValue(String key) {
-		return environmentTable.get(profile, key);
+		String val = environmentTable.get(profile, key);
+		return Objects.requireNonNull(val, String.format("Unable to locate property Profile: %s , Key: %s", profile, key));
 	}
 
 	@Override
