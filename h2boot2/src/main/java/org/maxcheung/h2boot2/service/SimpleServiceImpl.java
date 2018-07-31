@@ -20,10 +20,9 @@ import com.google.common.io.Resources;
 @Service
 public class SimpleServiceImpl implements SimpleService {
 
-    final String profile;
-	 
 	private static final String ENV_PROPERTIES = "environmentTable.csv";
 	private Splitter splitter = Splitter.on(',');
+	private final String profile;
 	private final ImmutableTable<String, String, String> environmentTable;
 	
 	@Autowired
@@ -31,7 +30,6 @@ public class SimpleServiceImpl implements SimpleService {
 		this.profile = profile;
 		environmentTable = initialise();
 	}
-
 	
 	@Override
 	public String getValue(String key) {
