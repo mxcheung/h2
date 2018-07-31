@@ -2,8 +2,6 @@ package org.maxcheung.h2boot2.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -45,10 +43,8 @@ public class SimpleServiceImpl implements SimpleService {
 	}
 
 	private ImmutableTable<String, String, String> initialise() throws IOException {
-		URL url = Resources.getResource(ENV_PROPERTIES);
-		File file = FileUtils.toFile(url);
-		List<String> result = Files.readLines(file, Charsets.UTF_8);
-		return processList(result);
+		File file = FileUtils.toFile(Resources.getResource(ENV_PROPERTIES));
+		return processList(Files.readLines(file, Charsets.UTF_8));
 	}
 
 	private ImmutableTable<String, String, String> processText(String text) {
