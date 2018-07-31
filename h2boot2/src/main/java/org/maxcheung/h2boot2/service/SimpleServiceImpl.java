@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Charsets;
@@ -12,22 +15,25 @@ import com.google.common.collect.ImmutableTable;
 import com.google.common.collect.Table;
 import com.google.common.io.Files;
 import com.google.common.io.Resources;
-import org.apache.commons.io.FileUtils;
 
 @Service
 public class SimpleServiceImpl implements SimpleService {
 
+    final String profile;
+	 
 	private static final String ENV_PROPERTIES = "environmentTable.csv";
 	private Splitter splitter = Splitter.on(',');
 	private final ImmutableTable<String, String, String> environmentTable;
 	
-	public SimpleServiceImpl() throws IOException {
+	@Autowired
+	public SimpleServiceImpl(@Value("${spring.profile}") final String profile) throws IOException {
+		this.profile = profile;
 		environmentTable = initialise();
 	}
 
 	@Override
-	public String getValue(String env, String key) {
-		return environmentTable.get(env, key);
+	public String getValue(String key) {
+		return environmentTable.get(profile, key);
 	}
 
 	@Override

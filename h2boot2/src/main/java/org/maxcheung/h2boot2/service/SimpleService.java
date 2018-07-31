@@ -7,8 +7,7 @@ import com.google.common.collect.ImmutableTable;
 
 public interface SimpleService {
 
-
-	String getValue(String env, String key);
+	String getValue(String key);
 	ImmutableTable<String, String, String> processList(List<String> strings);
 	
 }

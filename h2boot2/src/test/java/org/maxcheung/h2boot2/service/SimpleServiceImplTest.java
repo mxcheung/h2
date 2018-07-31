@@ -18,13 +18,15 @@ public class SimpleServiceImplTest {
     
 	@Before
 	public void setup() throws IOException {
-		simpleService = new SimpleServiceImpl();
+		simpleService = new SimpleServiceImpl("dev");
 	}
 	
 	@Test
-	public void shouldGetValuesByEnvironment() {
-		assertEquals("v1",simpleService.getValue("dev", "key1"));
-		assertEquals("v2",simpleService.getValue("sit", "key1"));
+	public void shouldGetValuesByEnvironment() throws IOException {
+		simpleService = new SimpleServiceImpl("dev");
+		assertEquals("v1",simpleService.getValue("key1"));
+		simpleService = new SimpleServiceImpl("sit");
+		assertEquals("v2",simpleService.getValue("key1"));
 	}
 
 	@Test
