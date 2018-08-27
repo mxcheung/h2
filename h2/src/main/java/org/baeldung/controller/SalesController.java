@@ -67,7 +67,7 @@ public class SalesController {
 
 	@RequestMapping(value = "/loadSales", method = RequestMethod.GET)
 	public void loadSales() {
-		LOG.info(" loadSales");
+		LOG.error(" loadSales");
 		salesService.loadSales();
 	}
 
