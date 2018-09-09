@@ -1,6 +1,8 @@
 package org.baeldung.service.holiday;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -48,6 +50,13 @@ public class HolidayServiceTest {
 		assertEquals(expected, nextBusinessDays);
 	}
 
+
+	@Test
+	public void isHoliday() {
+		assertFalse(holidayService.isHoliday(startDate));
+		assertTrue(holidayService.isWorkingDay(startDate));
+		assertTrue(holidayService.isHoliday(holiday1.getDate()));
+	}
 	private Calender createHoliday(LocalDate date, String exchange) {
 		Calender calender = new Calender();
 		calender.setDate(date);

@@ -33,12 +33,15 @@ public class HolidayServiceImpl implements HolidayService {
 		return dates;
 	}
 
-	private boolean isWorkingDay(LocalDate localDate) {
+	@Override
+	public boolean isHoliday(LocalDate date) {
+		return (!calenderService.getCalender(date, "exchange").isEmpty());
+	}
+
+	@Override
+	public boolean isWorkingDay(LocalDate localDate) {
 		return !weekend.contains(localDate.getDayOfWeek());
 	}
 
-	private boolean isHoliday(LocalDate date) {
-		return (!calenderService.getCalender(date, "exchange").isEmpty());
-	}
 
 }

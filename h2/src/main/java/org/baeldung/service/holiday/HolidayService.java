@@ -6,5 +6,9 @@ import java.util.List;
 public interface HolidayService {
 
 	List<LocalDate> getNBusinessDays(LocalDate currDate, long size, long daysToAdd);
+
+	boolean isHoliday(LocalDate date);
+
+	boolean isWorkingDay(LocalDate localDate);
 	
 }
