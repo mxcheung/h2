@@ -1,10 +1,10 @@
-package org.baeldung.service;
+package org.baeldung.service.holiday;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public interface DateService {
+public interface HolidayService {
 
-	List<LocalDate> getNBusinessDays(LocalDate currDate, long size);
+	List<LocalDate> getNBusinessDays(LocalDate currDate, long size, long daysToAdd);
 	
 }
